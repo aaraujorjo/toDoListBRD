@@ -11,6 +11,7 @@ import {
   MatSelectModule,      
   MatOptionModule,
   MatNativeDateModule,
+  MAT_DATE_LOCALE,
   MatListModule,
   MatButtonModule,
   MatIconModule,
@@ -38,6 +39,9 @@ import {
     MatIconModule,
     MatCheckboxModule,
     MatProgressSpinnerModule
-  ]
+  ],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+ ],
 })
 export class SharedModule {}

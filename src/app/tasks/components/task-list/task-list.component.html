@@ -1,3 +1,9 @@
-<p>
-  task-list works!
-</p>
+<mat-list >
+    <app-task-item *ngFor="let task of tasks$ | async"
+      [task]="task"
+      (remove)="onRemove(task.id)"
+      (finished)="onUpdate($event)"
+      (edit)="onUpdate($event)">
+    </app-task-item>
+
+  </mat-list>

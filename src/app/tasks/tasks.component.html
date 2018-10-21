@@ -1,8 +1,12 @@
 
 <mat-card>
-  <app-task-list></app-task-list>
+    <app-task-list
+      [tasks]="tasks$"
+      (remove)="onRemoveTask($event)"
+      (edit)="onUpdateTask($event)">
+  </app-task-list>
 </mat-card>
 
-<button mat-fab class="mdc-fab app-fab--absolute">
+<button mat-fab class="mdc-fab app-fab--absolute"  routerLink="task-form">
     <mat-icon aria-label="Adicionar nova Tarefa">add</mat-icon>
 </button>

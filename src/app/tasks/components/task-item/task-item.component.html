@@ -1,3 +1,20 @@
-<p>
-  task-item works!
-</p>
+<mat-list-item class="list-item">
+    
+    <mat-checkbox color="primary" type="checkbox" 
+      [name]="task.id" [(ngModel)]="task.completed" (change)="onFinish()">
+      
+      <span [class.task-completed]="task.completed">
+          <a [routerLink]="['task-detail',task.id]" style="color: black; text-decoration:none; ">{{ task.taskName }}</a>
+      </span><br>
+      <span [class.task-completed]="task.completed"> {{ task.taskDate }} </span>
+        
+  
+    </mat-checkbox>
+    <span class="fill-remaining-space"></span>
+    <span>
+    <button mat-mini-fab (click)="onRemove()">
+      <mat-icon color="primary">delete_forever</mat-icon>
+    </button>
+    </span>
+    
+  </mat-list-item>

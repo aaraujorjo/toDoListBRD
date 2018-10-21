@@ -1,4 +1,35 @@
-<p>
-    task-detail works!
-</p>
+
+
+  <mat-toolbar layout-align="center center" color="primary">
+      <button mat-icon-button (click)="goBack()">
+        <mat-icon aria-label="Voltar">arrow_back</mat-icon>
+      </button>
+    
+      <p style="color: white">{{ 'FORM_TITLE' | translate }} </p>
+    
+    </mat-toolbar>
+    <mat-card>     
+    <mat-card-content>    
+        <form [formGroup]="taskForm" (ngSubmit)="update()">    
+            <mat-form-field class="full-width">
+                <input matInput placeholder="{{ 'TASK_NAME_FORM' | translate }}" type="text"
+                  name="title"
+                  formControlName="taskName"
+                  autocomplete="off"
+                  autofocus
+                  value="">
+            </mat-form-field>
+    
+            <mat-form-field class="full-width">    
+                <input matInput formControlName="taskDate" [matDatepicker]="picker" placeholder="{{ 'TASK_DATE_FORM' | translate }}">    
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    
+                <mat-datepicker touchUi="true" #picker></mat-datepicker>    
+            </mat-form-field>   
+            <br/>
+            <button mat-raised-button color="primary"  [disabled]="!taskForm.valid">{{ 'SAVE_BUTTON' | translate }}</button>    
+            
+           
+        </form>    
+    </mat-card-content>    
+    </mat-card>   
   
