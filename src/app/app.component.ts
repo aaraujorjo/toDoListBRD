@@ -4,8 +4,13 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  template: `
+  <mat-toolbar layout-align="center center" color="primary">
+    <img src="assets/images/todolistlogo-1.png" class="title-center">
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+  <footer></footer>
+  `
 })
 export class AppComponent {
   items: Observable<any[]>;
